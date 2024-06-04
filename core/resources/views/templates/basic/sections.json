@@ -1,0 +1,162 @@
+{
+    "banner": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Banner Section",
+        "content": {
+            "images": {
+                "image": {
+                    "size": "1885x995"
+                }
+            },
+            "heading": "text",
+            "subheading": "textarea",
+            "download_button": "text",
+            "iso_download_link": "text",
+            "android_download_link": "text"
+        }
+    },
+    "dashboard": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Dashboard Section",
+        "content": {
+            "images": {
+                "image": {
+                    "size": "1340x760"
+                }
+            }
+        }
+    },
+    "social_icon": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Social Icons",
+        "element": {
+            "title": "text",
+            "social_icon": "icon",
+            "url": "text",
+            "modal": true
+        }
+    },
+    "brand": {
+        "builder": true,
+        "no_selection": false,
+        "name": "Brand Section",
+        "content": {
+            "heading": "text"
+        },
+        "element": {
+            "images": {
+                "image": {
+                    "size": "150x40"
+                }
+            },
+            "modal": true
+        }
+    },
+    "feature": {
+        "builder": true,
+        "name": "Feature Section",
+        "content": {
+            "heading": "text"
+        },
+        "element": {
+            "images": {
+                "image": {
+                    "size": "725x360"
+                }
+            },
+            "title": "text",
+            "features": "textarea-nic",
+            "modal": false
+        }
+    },
+    "video": {
+        "builder": false,
+        "no_selection": false,
+        "name": "Video Section"
+    },
+    "testimonial": {
+        "builder": true,
+        "name": "Testimonial Section",
+        "content": {
+            "heading": "text",
+            "sub_heading": "text"
+        },
+        "element": {
+            "images": {
+                "photo": {
+                    "size": "55x55"
+                }
+            },
+            "name": "text",
+            "designation": "text",
+            "select": {
+                "name": "rating",
+                "options": {
+                    "1": "One",
+                    "2": "Two",
+                    "3": "Three",
+                    "4": "Four",
+                    "5": "Five"
+                }
+            },
+            "review": "textarea",
+            "modal": true
+        }
+    },
+    "owner_request": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Vendor Request Page",
+        "content": {
+            "heading": "text",
+            "subheading": "textarea",
+            "form_title": "text",
+            "form_subtitle": "text"
+        },
+        "element": {
+            "title": "text",
+            "description": "textarea",
+            "icon": "icon",
+            "modal": true
+        }
+    },
+    "vendor_form_data": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Vendor Verification",
+        "content": {
+            "form_title": "text",
+            "form_subtitle": "text"
+        }
+    },
+    "cta": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Call To Action",
+        "content": {
+            "images": {
+                "image": {
+                    "size": "255x365"
+                },
+                "background_image": {
+                    "size": "1365x370"
+                }
+            },
+            "heading": "text",
+            "subheading": "text"
+        }
+    },
+    "policy_pages": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Policy Pages",
+        "element": {
+            "title": "text",
+            "details": "textarea-nic",
+            "modal": false
+        }
+    }
+}
