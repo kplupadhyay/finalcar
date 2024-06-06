@@ -125,6 +125,25 @@ Route::middleware('admin')->group(function () {
         });
     });
 
+    // carr
+    Route::name('carlocation.')->group(function () {
+        Route::controller('CarCountryController')->name('countr.')->prefix('countr')->group(function () {
+            Route::get('all', 'all')->name('all');
+            Route::post('add/{id?}', 'add')->name('add');
+            Route::post('status/update/{id}', 'updateStatus')->name('status.update');
+        });
+
+        Route::controller('CarCityController')->name('cit.')->prefix('cit')->group(function () {
+            Route::get('', 'all')->name('all');
+            Route::post('add/{id?}', 'add')->name('add');
+        });
+
+        Route::controller('CarLocationController')->prefix('locatio')->group(function () {
+            Route::get('', 'all')->name('all');
+            Route::post('add/{id?}', 'add')->name('add');
+        });
+    });
+
     Route::name('hotel.')->group(function () {
         //Amenity
         Route::controller('AmenitiesController')->name('amenity.')->prefix('amenities')->group(function () {
@@ -150,6 +169,12 @@ Route::middleware('admin')->group(function () {
 
     //ads management
     Route::controller('AdsController')->name('ads.')->prefix('ads')->group(function () {
+        Route::get('all', 'all')->name('all');
+        Route::post('add/{id?}', 'add')->name('add');
+        Route::post('delete/{id}', 'delete')->name('delete');
+    });
+
+    Route::controller('AdsController')->name('carads.')->prefix('carads')->group(function () {
         Route::get('all', 'all')->name('all');
         Route::post('add/{id?}', 'add')->name('add');
         Route::post('delete/{id}', 'delete')->name('delete');
@@ -190,6 +215,20 @@ Route::middleware('admin')->group(function () {
         Route::post('approve/{id}', 'approve')->name('approve');
     });
 
+    //car deposit sysytem
+
+    Route::controller('CarDepositController')->prefix('cardeposi')->name('cardeposi.')->group(function () {
+        Route::get('/', 'deposit')->name('list');
+        Route::get('pending', 'pending')->name('pending');
+        Route::get('rejected', 'rejected')->name('rejected');
+        Route::get('approved', 'approved')->name('approved');
+        Route::get('successful', 'successful')->name('successful');
+        Route::get('initiated', 'initiated')->name('initiated');
+        Route::get('details/{id}', 'details')->name('details');
+        Route::post('reject', 'reject')->name('reject');
+        Route::post('approve/{id}', 'approve')->name('approve');
+    });
+
     // WITHDRAW SYSTEM
     Route::name('withdraw.')->prefix('withdraw')->group(function () {
 
@@ -202,6 +241,8 @@ Route::middleware('admin')->group(function () {
             Route::post('approve', 'approve')->name('approve');
             Route::post('reject', 'reject')->name('reject');
         });
+//car withdraw
+
 
 
         // Withdraw Method
@@ -215,6 +256,9 @@ Route::middleware('admin')->group(function () {
         });
     });
 
+
+
+    
     // Report
     Route::controller('ReportController')->prefix('report')->name('report.')->group(function () {
         Route::get('transaction', 'transaction')->name('transaction');

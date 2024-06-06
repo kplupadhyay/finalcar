@@ -363,7 +363,7 @@
 
                         </ul>
                     </div>
-                </li>
+                </li>
 
                 <!-- 77777777777 -->
                 <li class="sidebar-menu-item {{ menuActive('admin.dashboard') }}">
@@ -374,28 +374,28 @@
                 </li>
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.location*', 3) }}" href="javascript:void(0)">
+                    <a class="{{ menuActive('admin.carlocation*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon la la-globe"></i>
                         <span class="menu-title">@lang('Manage Locations') </span>
                     </a>
-                    <div class="sidebar-submenu {{ menuActive('admin.location*', 2) }}">
+                    <div class="sidebar-submenu {{ menuActive('admin.carlocation*', 2) }}">
                         <ul>
-                            <li class="sidebar-menu-item {{ menuActive('admin.location.country.all') }}">
-                                <a class="nav-link" href="{{ route('admin.location.country.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carlocation.countr.all') }}">
+                                <a class="nav-link" href="{{ route('admin.carlocation.countr.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Countries')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.location.city.all') }}">
-                                <a class="nav-link" href="{{ route('admin.location.city.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carlocation.cit.all') }}">
+                                <a class="nav-link" href="{{ route('admin.carlocation.cit.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Cities')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.location.all') }}">
-                                <a class="nav-link" href="{{ route('admin.location.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carlocation.all') }}">
+                                <a class="nav-link" href="{{ route('admin.carlocation.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Locations')</span>
                                 </a>
@@ -404,8 +404,8 @@
                     </div>
                 </li>
 
-                <li class="sidebar-menu-item {{ menuActive('admin.ads.all') }}">
-                    <a class="nav-link" href="{{ route('admin.ads.all') }}">
+                <li class="sidebar-menu-item {{ menuActive('admin.carads.all') }}">
+                    <a class="nav-link" href="{{ route('admin.carads.all') }}">
                         <i class="menu-icon las la-ad"></i>
                         <span class="menu-title">@lang('Manage Ads')</span>
                     </a>
@@ -606,20 +606,20 @@
                 </li>
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.deposit*', 3) }}" href="javascript:void(0)">
+                    <a class="{{ menuActive('admin.cardeposi*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon las la-file-invoice-dollar"></i>
-                        <span class="menu-title">@lang('Payments')</span>
+                        <span class="menu-title">@lang('CarPayments')</span>
                         @if (0 < $pendingDepositsCount)
                             <span class="menu-badge pill bg--danger ms-auto">
                                 <i class="fa fa-exclamation"></i>
                             </span>
                         @endif
                     </a>
-                    <div class="sidebar-submenu {{ menuActive('admin.deposit*', 2) }} ">
+                    <div class="sidebar-submenu {{ menuActive('admin.cardeposi*', 2) }} ">
                         <ul>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.deposit.pending') }} ">
-                                <a class="nav-link" href="{{ route('admin.deposit.pending') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.cardeposi.pending') }} ">
+                                <a class="nav-link" href="{{ route('admin.cardeposi.pending') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Pending Payments')</span>
                                     @if ($pendingDepositsCount)
@@ -628,37 +628,37 @@
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.deposit.approved') }} ">
-                                <a class="nav-link" href="{{ route('admin.deposit.approved') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.cardeposi.approved') }} ">
+                                <a class="nav-link" href="{{ route('admin.cardeposi.approved') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Approved Payments')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.deposit.successful') }} ">
-                                <a class="nav-link" href="{{ route('admin.deposit.successful') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.cardeposi.successful') }} ">
+                                <a class="nav-link" href="{{ route('admin.cardeposi.successful') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Successful Payments')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.deposit.rejected') }} ">
-                                <a class="nav-link" href="{{ route('admin.deposit.rejected') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.cardeposi.rejected') }} ">
+                                <a class="nav-link" href="{{ route('admin.cardeposi.rejected') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Rejected Payments')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.deposit.initiated') }} ">
+                            <li class="sidebar-menu-item {{ menuActive('admin.cardeposi.initiated') }} ">
 
-                                <a class="nav-link" href="{{ route('admin.deposit.initiated') }}">
+                                <a class="nav-link" href="{{ route('admin.cardeposi.initiated') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Initiated Payments')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.deposit.list') }} ">
-                                <a class="nav-link" href="{{ route('admin.deposit.list') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.cardeposi.list') }} ">
+                                <a class="nav-link" href="{{ route('admin.cardeposi.list') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('All Payments')</span>
                                 </a>
@@ -667,61 +667,7 @@
                     </div>
                 </li>
 
-                <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.withdraw*', 3) }}" href="javascript:void(0)">
-                        <i class="menu-icon la la-bank"></i>
-                        <span class="menu-title">@lang('Withdrawals') </span>
-                        @if (0 < $pendingWithdrawCount)
-                            <span class="menu-badge pill bg--danger ms-auto">
-                                <i class="fa fa-exclamation"></i>
-                            </span>
-                        @endif
-                    </a>
-                    <div class="sidebar-submenu {{ menuActive('admin.withdraw*', 2) }} ">
-                        <ul>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.withdraw.method.*') }}">
-                                <a class="nav-link" href="{{ route('admin.withdraw.method.index') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Withdrawal Methods')</span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.withdraw.pending') }} ">
-                                <a class="nav-link" href="{{ route('admin.withdraw.pending') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Pending Withdrawals')</span>
-
-                                    @if ($pendingWithdrawCount)
-                                        <span class="menu-badge pill bg--danger ms-auto">{{ $pendingWithdrawCount }}</span>
-                                    @endif
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.withdraw.approved') }} ">
-                                <a class="nav-link" href="{{ route('admin.withdraw.approved') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Approved Withdrawals')</span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.withdraw.rejected') }} ">
-                                <a class="nav-link" href="{{ route('admin.withdraw.rejected') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Rejected Withdrawals')</span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.withdraw.log') }} ">
-                                <a class="nav-link" href="{{ route('admin.withdraw.log') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('All Withdrawals')</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </li>
+              
                 <!-- 7777777777777 -->
 
                 <li class="sidebar__menu-header">@lang('Support & Report')</li>
