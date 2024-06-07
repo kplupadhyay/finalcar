@@ -453,21 +453,21 @@
                             <li class="sidebar-menu-item {{ menuActive('admin.hotel.amenity.all') }}">
                                 <a class="nav-link" href="{{ route('admin.hotel.amenity.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Car1')</span>
+                                    <span class="menu-title">@lang('carA')</span>
                                 </a>
                             </li>
 
                             <li class="sidebar-menu-item {{ menuActive('admin.hotel.facility.all') }}">
                                 <a class="nav-link" href="{{ route('admin.hotel.facility.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Car2')</span>
+                                    <span class="menu-title">@lang('Carb')</span>
                                 </a>
                             </li>
 
                             <li class="sidebar-menu-item {{ menuActive('admin.hotel.bed.all') }}">
                                 <a class="nav-link" href="{{ route('admin.hotel.bed.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Car3')</span>
+                                    <span class="menu-title">@lang('Carc')</span>
                                 </a>
                             </li>
                         </ul>
@@ -547,10 +547,10 @@
                     </div>
                 </li>
 
-                <li class="sidebar-menu-item {{ menuActive(['admin.vendor.request', 'admin.vendor.request.detail']) }}">
-                    <a class="nav-link" href="{{ route('admin.vendor.request') }}">
+                <li class="sidebar-menu-item {{ menuActive(['admin.carvendor.request', 'admin.carvendor.request.detail']) }}">
+                    <a class="nav-link" href="{{ route('admin.carvendor.request') }}">
                         <i class="menu-icon las la-hand-point-right"></i>
-                        <span class="menu-title">@lang('Vendor Requests')</span>
+                        <span class="menu-title">@lang('Car Vendor Requests')</span>
                         @if ($ownerRequestCount)
                             <span class="menu-badge pill bg--danger ms-auto">{{ $ownerRequestCount }}</span>
                         @endif
@@ -558,9 +558,9 @@
                 </li>
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.owners*', 3) }}" href="javascript:void(0)">
+                    <a class="{{ menuActive('admin.carowner*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon las la-hotel"></i>
-                        <span class="menu-title">@lang('Hotels')</span>
+                        <span class="menu-title">@lang('Cars')</span>
                         @if ($bannedOwnersCount > 0)
                             <span class="menu-badge pill bg--danger ms-auto">
                                 <i class="fa fa-exclamation"></i>
@@ -568,29 +568,29 @@
                         @endif
                     </a>
 
-                    <div class="sidebar-submenu {{ menuActive('admin.owners*', 2) }}">
+                    <div class="sidebar-submenu {{ menuActive('admin.carowner*', 2) }}">
                         <ul>
-                            <li class="sidebar-menu-item {{ menuActive('admin.owners.active') }}">
-                                <a class="nav-link" href="{{ route('admin.owners.active') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carowner.active') }}">
+                                <a class="nav-link" href="{{ route('admin.carowner.active') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Active Hotels')</span>
+                                    <span class="menu-title">@lang('Active Cars')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.owners.banned') }}">
-                                <a class="nav-link" href="{{ route('admin.owners.banned') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carowner.banned') }}">
+                                <a class="nav-link" href="{{ route('admin.carowner.banned') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Banned Hotels')</span>
+                                    <span class="menu-title">@lang('Banned Cars')</span>
                                     @if ($bannedOwnersCount)
                                         <span class="menu-badge pill bg--danger ms-auto">{{ $bannedOwnersCount }}</span>
                                     @endif
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.owners.all') }}">
-                                <a class="nav-link" href="{{ route('admin.owners.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carowner.all') }}">
+                                <a class="nav-link" href="{{ route('admin.carowner.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('All Hotels')</span>
+                                    <span class="menu-title">@lang('All Cars')</span>
                                 </a>
                             </li>
 

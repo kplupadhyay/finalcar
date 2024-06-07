@@ -80,8 +80,43 @@ Route::middleware('admin')->group(function () {
         Route::post('request/approve/{id}', 'approveRequest')->name('request.approve');
     });
 
+    //manage car vendor request
+    Route::controller('VendorRequestController')->prefix('carvendor')->name('carvendor.')->group(function () {
+        Route::get('request', 'vendorRequests')->name('request');
+        Route::get('vendor-request/detail/{id}', 'requestDetail')->name('request.detail');
+        Route::post('request/reject/{id}', 'rejectRequest')->name('request.reject');
+        Route::post('request/approve/{id}', 'approveRequest')->name('request.approve');
+    });
+
     // Owner Manager
     Route::controller('ManageOwnersController')->name('owners.')->prefix('hotels')->group(function () {
+        Route::get('all', 'allOwners')->name('all');
+        Route::get('active', 'activeOwners')->name('active');
+        Route::get('banned', 'bannedOwners')->name('banned'); 
+
+        Route::get('detail/{id}', 'detail')->name('detail');
+        Route::post('update/{id}', 'update')->name('update');
+
+        Route::get('setting/{id}', 'hotelSetting')->name('hotel.setting');
+        Route::post('update-setting/{id}', 'updateHotelSetting')->name('hotel.setting.update');
+
+        Route::get('send-notification/{id}', 'showNotificationSingleForm')->name('notification.single');
+        Route::post('send-notification/{id}', 'sendNotificationSingle')->name('notification.single');
+
+        Route::get('login/{id}', 'login')->name('login');
+        Route::post('status/{id}', 'status')->name('status');
+        Route::post('add-sub-balance/{id}', 'addSubBalance')->name('add.sub.balance');
+
+        Route::get('send-notification', 'showNotificationAllForm')->name('notification.all');
+        Route::post('send-notification', 'sendNotificationAll')->name('notification.all.send');
+        Route::get('list', 'list')->name('list');
+        Route::get('notification-log/{id}', 'notificationLog')->name('notification.log');
+        Route::post('feature/status/{id}', 'updateFeatureStatus')->name('feature.status.update');
+    });
+
+
+    //carowner manager
+    Route::controller('CarManageOwnersController')->name('carowner.')->prefix('cars')->group(function () {
         Route::get('all', 'allOwners')->name('all');
         Route::get('active', 'activeOwners')->name('active');
         Route::get('banned', 'bannedOwners')->name('banned'); 

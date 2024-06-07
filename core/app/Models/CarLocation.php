@@ -23,7 +23,7 @@ class CarLocation extends Model
     use Searchable;
     public function city()
     {
-        return $this->belongsTo(CarCity::class);
+        return $this->belongsTo(CarCity::class , "city_id");
     }
 
     public function scopeActive($query)

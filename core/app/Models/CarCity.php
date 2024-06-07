@@ -34,12 +34,12 @@ class CarCity extends Model
 
     public function locations()
     {
-        return $this->hasMany(CarLocation::class);
+        return $this->hasMany(CarLocation::class , "city_id");
     }
 
     public function hotelSettings()
     {
-        return $this->hasMany(HotelSetting::class);
+        return $this->hasMany(CarSetting::class);
     }
 
     //scope

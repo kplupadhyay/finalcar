@@ -13,6 +13,6 @@ class CarCountry extends Model
     use GlobalStatus;
 
     public function cities(){
-        return $this->hasMany(CarCity::class);
+        return $this->hasMany(CarCity::class, 'country_id');
     }
 }

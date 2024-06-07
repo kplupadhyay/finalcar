@@ -13,7 +13,7 @@ class CarCityController extends Controller
 {
     public function all()
     {
-        $pageTitle     = 'All Cities';
+        $pageTitle     = 'All Cars';
         $cities        = CarCity::searchable(['name', 'country:name'])->latest()->with('country')->withCount('locations as total_location')->paginate(getPaginate());
         $countries     = CarCountry::orderBy('name')->get();
         return view('admin.carcities', compact('pageTitle', 'cities', 'countries'));
@@ -21,17 +21,17 @@ class CarCityController extends Controller
 
     public function add(Request $request, $id = 0)
     {
-        $imageValidation = 'required';
+        // $imageValidation = 'required';
 
-        if ($id) {
-            $imageValidation = 'nullable';
-        }
+        // if ($id) {
+        //     $imageValidation = 'nullable';
+        // }
 
-        $request->validate([
-            'country_id' => 'required|exists:countries,id',
-            'name' => 'required|string|unique:cities,name,' . $id,
-            'image'  => [$imageValidation, new FileTypeValidate(['png', 'jpg', 'jpg'])]
-        ]);
+        // $request->validate([
+        //     'country_id' => 'required|exists:countries,id',
+        //     'name' => 'required|string|unique:cities,name,' . $id,
+        //     'image'  => [$imageValidation, new FileTypeValidate(['png', 'jpg', 'jpg'])]
+        // ]);
 
         if ($id) {
             $city = CarCity::findOrFail($id);
@@ -45,16 +45,16 @@ class CarCityController extends Controller
         $city->name       = $request->name;
         $city->is_popular = $request->has('is_popular') ? Status::YES : Status::NO;
 
-        if ($request->hasFile('image')) {
-            try {
-                $path = getFilePath('city');
-                $size = getFileSize('city');
-                $city->image = fileUploader($request->image, $path, $size, @$city->image);
-            } catch (\Exception $exp) {
-                $notify[] = ['error', 'Couldn\'t upload the image'];
-                return back()->withNotify($notify);
-            }
-        }
+        // if ($request->hasFile('image')) {
+        //     try {
+        //         $path = getFilePath('city');
+        //         $size = getFileSize('city');
+        //         $city->image = fileUploader($request->image, $path, $size, @$city->image);
+        //     } catch (\Exception $exp) {
+        //         $notify[] = ['error', 'Couldn\'t upload the image'];
+        //         return back()->withNotify($notify);
+        //     }
+        // }
 
         $city->save();
 

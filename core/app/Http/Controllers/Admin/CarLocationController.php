@@ -11,7 +11,7 @@ class CarLocationController extends Controller
 {
     public function all()
     {
-        $pageTitle = 'All Locations';
+        $pageTitle = 'Car Locations';
         $countries = CarCountry::orderBy('name')->with('cities')->get();
         $locations = CarLocation::searchable(['name', 'city:name', 'city.country:name'])->latest()->with('city.country')->paginate(getPaginate());
 
