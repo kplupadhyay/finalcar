@@ -17,16 +17,16 @@ use App\Traits\ApiQuery;
 use App\Traits\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
-class NotificationLog extends Model
+class CarNotificationLog extends Model
 {
     use Searchable, ApiQuery;
     
     public function user()
     {
-        return $this->belongsTo(User::class)->withTrashed();
+        return $this->belongsTo(CarUser::class)->withTrashed();
     }
 
     public function owner(){
-    	return $this->belongsTo(Owner::class);
+    	return $this->belongsTo(CarOwner::class);
     }
 }

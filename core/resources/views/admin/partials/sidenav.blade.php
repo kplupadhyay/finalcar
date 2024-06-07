@@ -59,6 +59,7 @@
                         <span class="menu-title">@lang('Hotel Attributes') </span>
                     </a>
                     <div class="sidebar-submenu {{ menuActive('admin.hotel*', 2) }}">
+
                         <ul>
                             <li class="sidebar-menu-item {{ menuActive('admin.hotel.amenity.all') }}">
                                 <a class="nav-link" href="{{ route('admin.hotel.amenity.all') }}">
@@ -85,36 +86,7 @@
                 </li>
                
 
-                <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.hotel*', 3) }}" href="javascript:void(0)">
-                        <i class="menu-icon la la-tools"></i>
-                        <span class="menu-title">@lang('Car Attributes') </span>
-                    </a>
-                    <div class="sidebar-submenu {{ menuActive('admin.hotel*', 2) }}">
-                        <ul>
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.amenity.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.amenity.all') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Car1')</span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.facility.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.facility.all') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Car2')</span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.bed.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.bed.all') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Car3')</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+               
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.users*', 3) }}" href="javascript:void(0)">
@@ -369,7 +341,7 @@
                 <li class="sidebar-menu-item {{ menuActive('admin.dashboard') }}">
                     <a class="nav-link" href="{{ route('admin.dashboard') }}">
                         <i class="menu-icon las la-home"></i>
-                        <span class="menu-title">@lang('Cars')</span>
+                        <span class="menu-title">@lang('Cars Dahboard ')</span>
                     </a>
                 </li>
 
@@ -407,65 +379,36 @@
                 <li class="sidebar-menu-item {{ menuActive('admin.carads.all') }}">
                     <a class="nav-link" href="{{ route('admin.carads.all') }}">
                         <i class="menu-icon las la-ad"></i>
-                        <span class="menu-title">@lang('Manage Ads')</span>
+                        <span class="menu-title">@lang('Manage Car Ads')</span>
                     </a>
                 </li>
 
-                <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.hotel*', 3) }}" href="javascript:void(0)">
-                        <i class="menu-icon la la-tools"></i>
-                        <span class="menu-title">@lang('Hotel Attributes') </span>
-                    </a>
-                    <div class="sidebar-submenu {{ menuActive('admin.hotel*', 2) }}">
-                        <ul>
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.amenity.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.amenity.all') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Amenities')</span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.facility.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.facility.all') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Facilities')</span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.bed.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.bed.all') }}">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Bed Types')</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+               
                
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.hotel*', 3) }}" href="javascript:void(0)">
+                    <a class="{{ menuActive('admin.car*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon la la-tools"></i>
                         <span class="menu-title">@lang('Car Attributes') </span>
                     </a>
                     <div class="sidebar-submenu {{ menuActive('admin.hotel*', 2) }}">
                         <ul>
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.amenity.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.amenity.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.car.amen.all') }}">
+                                <a class="nav-link" href="{{ route('admin.car.amen.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('carA')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.facility.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.facility.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.car.face.all') }}">
+                                <a class="nav-link" href="{{ route('admin.car.face.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Carb')</span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.hotel.bed.all') }}">
-                                <a class="nav-link" href="{{ route('admin.hotel.bed.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.car.beds.all') }}">
+                                <a class="nav-link" href="{{ route('admin.car.beds.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Carc')</span>
                                 </a>
@@ -475,9 +418,9 @@
                 </li>
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.users*', 3) }}" href="javascript:void(0)">
+                    <a class="{{ menuActive('admin.carusers*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon las la-users"></i>
-                        <span class="menu-title">@lang('Registered Users')</span>
+                        <span class="menu-title">@lang('Registered Car Users')</span>
                         @if ($bannedUsersCount > 0 || $emailUnverifiedUsersCount > 0 || $mobileUnverifiedUsersCount > 0)
                             <span class="menu-badge pill bg--danger ms-auto">
                                 <i class="fa fa-exclamation"></i>
@@ -485,16 +428,16 @@
                         @endif
                     </a>
 
-                    <div class="sidebar-submenu {{ menuActive('admin.users*', 2) }}">
+                    <div class="sidebar-submenu {{ menuActive('admin.carusers*', 2) }}">
                         <ul>
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.active') }}">
-                                <a class="nav-link" href="{{ route('admin.users.active') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carusers.active') }}">
+                                <a class="nav-link" href="{{ route('admin.carusers.active') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Active Users')</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.banned') }}">
-                                <a class="nav-link" href="{{ route('admin.users.banned') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carusers.banned') }}">
+                                <a class="nav-link" href="{{ route('admin.carusers.banned') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Banned Users')</span>
                                     @if ($bannedUsersCount)
@@ -502,8 +445,8 @@
                                     @endif
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.email.unverified') }}">
-                                <a class="nav-link" href="{{ route('admin.users.email.unverified') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carusers.email.unverified') }}">
+                                <a class="nav-link" href="{{ route('admin.carusers.email.unverified') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Email Unverified')</span>
 
@@ -512,8 +455,8 @@
                                     @endif
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.mobile.unverified') }}">
-                                <a class="nav-link" href="{{ route('admin.users.mobile.unverified') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carusers.mobile.unverified') }}">
+                                <a class="nav-link" href="{{ route('admin.carusers.mobile.unverified') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Mobile Unverified')</span>
                                     @if ($mobileUnverifiedUsersCount)
@@ -522,23 +465,23 @@
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.all') }}">
-                                <a class="nav-link" href="{{ route('admin.users.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carusers.all') }}">
+                                <a class="nav-link" href="{{ route('admin.carusers.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('All Users')</span>
                                 </a>
                             </li>
                             
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.deleted') }}">
-                                <a class="nav-link" href="{{ route('admin.users.deleted') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carusers.deleted') }}">
+                                <a class="nav-link" href="{{ route('admin.carusers.deleted') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Deleted Users')</span>
                                 </a>
                             </li>
 
                             <hr class="my-0">
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.notification.all') }}">
-                                <a class="nav-link" href="{{ route('admin.users.notification.all') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.carusers.notification.all') }}">
+                                <a class="nav-link" href="{{ route('admin.carusers.notification.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Send Notification to All')</span>
                                 </a>
@@ -666,6 +609,62 @@
                         </ul>
                     </div>
                 </li>
+
+                <li class="sidebar-menu-item sidebar-dropdown">
+                    <a class="{{ menuActive('admin.withdraw*', 3) }}" href="javascript:void(0)">
+                        <i class="menu-icon la la-bank"></i>
+                        <span class="menu-title">@lang('Car Withdrawals') </span>
+                        @if (0 < $pendingWithdrawCount)
+                            <span class="menu-badge pill bg--danger ms-auto">
+                                <i class="fa fa-exclamation"></i>
+                            </span>
+                        @endif
+                    </a>
+                    <div class="sidebar-submenu {{ menuActive('admin.withdraw*', 2) }} ">
+                        <ul>
+
+                            <li class="sidebar-menu-item {{ menuActive('admin.carwithdraw.method.*') }}">
+                                <a class="nav-link" href="{{ route('admin.carwithdraw.method.index') }}">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang(' Car Withdrawal  Methods')</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-menu-item {{ menuActive('admin.carwithdraw.pending') }} ">
+                                <a class="nav-link" href="{{ route('admin.carwithdraw.pending') }}">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Pending Withdrawals')</span>
+
+                                    @if ($pendingWithdrawCount)
+                                        <span class="menu-badge pill bg--danger ms-auto">{{ $pendingWithdrawCount }}</span>
+                                    @endif
+                                </a>
+                            </li>
+
+                            <li class="sidebar-menu-item {{ menuActive('admin.carwithdraw.approved') }} ">
+                                <a class="nav-link" href="{{ route('admin.carwithdraw.approved') }}">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Approved Withdrawals')</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-menu-item {{ menuActive('admin.carwithdraw.rejected') }} ">
+                                <a class="nav-link" href="{{ route('admin.carwithdraw.rejected') }}">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Rejected Withdrawals')</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-menu-item {{ menuActive('admin.carwithdraw.log') }} ">
+                                <a class="nav-link" href="{{ route('admin.carwithdraw.log') }}">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('All Withdrawals')</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
 
               
                 <!-- 7777777777777 -->

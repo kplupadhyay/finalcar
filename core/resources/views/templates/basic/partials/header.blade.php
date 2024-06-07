@@ -13,6 +13,23 @@
     </div>
 </header>
 
+
+
+<!-- <header class="site-header {{ request()->routeIs('home') ? '' : 'header-two' }}" id="fixed-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between">
+            <a class="navbar-brand logo" href="{{ route('home') }}"><img src="{{ siteLogo() }}" alt=""></a>
+
+            <div class="purchase-button d-block d-lg-none">
+                <a class="btn btn--base pill" href="{{ route('carvendor.request') }}"> @lang('Register Your Car') </a>
+            </div>
+            <div class="purchase-button d-lg-block d-none">
+                <a class="btn btn--base pill" href="{{ route('carvendor.request') }}"> @lang('Register Your Car') </a>
+            </div>
+        </nav>
+    </div>
+</header> -->
+
 @push('script')
     <script>
         (function($) {

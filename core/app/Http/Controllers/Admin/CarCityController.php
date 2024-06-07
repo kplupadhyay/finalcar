@@ -21,17 +21,17 @@ class CarCityController extends Controller
 
     public function add(Request $request, $id = 0)
     {
-        // $imageValidation = 'required';
+        $imageValidation = 'required';
 
-        // if ($id) {
-        //     $imageValidation = 'nullable';
-        // }
+        if ($id) {
+            $imageValidation = 'nullable';
+        }
 
-        // $request->validate([
-        //     'country_id' => 'required|exists:countries,id',
-        //     'name' => 'required|string|unique:cities,name,' . $id,
-        //     'image'  => [$imageValidation, new FileTypeValidate(['png', 'jpg', 'jpg'])]
-        // ]);
+        $request->validate([
+            'country_id' => 'required|exists:countries,id',
+            'name' => 'required|string|unique:cities,name,' . $id,
+            'image'  => [$imageValidation, new FileTypeValidate(['png', 'jpg', 'jpg'])]
+        ]);
 
         if ($id) {
             $city = CarCity::findOrFail($id);

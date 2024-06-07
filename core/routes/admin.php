@@ -72,6 +72,35 @@ Route::middleware('admin')->group(function () {
         Route::get('notification-log/{id}', 'notificationLog')->name('notification.log');
     });
 
+    //car users
+
+    Route::controller('CarManageUsersController')->name('carusers.')->prefix('carguests')->group(function () {
+        Route::get('all', 'allUsers')->name('all');
+        Route::get('active', 'activeUsers')->name('active');
+        Route::get('banned', 'bannedUsers')->name('banned');
+        Route::get('email-verified', 'emailVerifiedUsers')->name('email.verified');
+        Route::get('email-unverified', 'emailUnverifiedUsers')->name('email.unverified');
+        Route::get('mobile-unverified', 'mobileUnverifiedUsers')->name('mobile.unverified');
+        Route::get('mobile-verified', 'mobileVerifiedUsers')->name('mobile.verified');
+        Route::get('mobile-verified', 'mobileVerifiedUsers')->name('mobile.verified');
+
+        Route::get('deleted', 'deletedUsers')->name('deleted');
+        Route::post('delete/{id}', 'deleteUser')->name('delete');
+        Route::post('restore/{id}', 'restoreDeletedUser')->name('restore');
+
+        Route::get('detail/{id}', 'detail')->name('detail');
+        Route::post('update/{id}', 'update')->name('update');
+
+        Route::get('send-notification/{id}', 'showNotificationSingleForm')->name('notification.single');
+        Route::post('send-notification/{id}', 'sendNotificationSingle')->name('notification.single');
+        Route::post('status/{id}', 'status')->name('status');
+
+        Route::get('send-notification', 'showNotificationAllForm')->name('notification.all');
+        Route::post('send-notification', 'sendNotificationAll')->name('notification.all.send');
+        Route::get('list', 'list')->name('list');
+        Route::get('notification-log/{id}', 'notificationLog')->name('notification.log');
+    });
+
     //manage vendor request 
     Route::controller('VendorRequestController')->prefix('vendor')->name('vendor.')->group(function () {
         Route::get('request', 'vendorRequests')->name('request');
@@ -140,6 +169,7 @@ Route::middleware('admin')->group(function () {
         Route::get('notification-log/{id}', 'notificationLog')->name('notification.log');
         Route::post('feature/status/{id}', 'updateFeatureStatus')->name('feature.status.update');
     });
+    
 
     //Location Setting
     Route::name('location.')->group(function () {
@@ -202,6 +232,30 @@ Route::middleware('admin')->group(function () {
     });
 
 
+    // caamen
+    Route::name('car.')->group(function () {
+        //Amenity
+        Route::controller('AmenitiesController')->name('amen.')->prefix('am')->group(function () {
+            Route::get('', 'index')->name('all');
+            Route::post('save/{id?}', 'save')->name('save');
+            Route::post('status/{id}', 'status')->name('status');
+        });
+
+        //Facility
+        Route::controller('FacilityController')->name('face.')->prefix('face')->group(function () {
+            Route::get('', 'index')->name('all');
+            Route::post('add/{id?}', 'add')->name('add');
+            Route::post('status/{id}', 'status')->name('status');
+        });
+
+        //Bed Type
+        Route::controller('BedTypeController')->name('beds.')->prefix('beds')->group(function () {
+            Route::get('', 'index')->name('all');
+            Route::post('save/{id?}', 'save')->name('save');
+        });
+    });
+
+
     //ads management
     Route::controller('AdsController')->name('ads.')->prefix('ads')->group(function () {
         Route::get('all', 'all')->name('all');
@@ -209,7 +263,7 @@ Route::middleware('admin')->group(function () {
         Route::post('delete/{id}', 'delete')->name('delete');
     });
 
-    Route::controller('AdsController')->name('carads.')->prefix('carads')->group(function () {
+    Route::controller('CarAdsController')->name('carads.')->prefix('carads')->group(function () {
         Route::get('all', 'all')->name('all');
         Route::post('add/{id?}', 'add')->name('add');
         Route::post('delete/{id}', 'delete')->name('delete');
@@ -276,7 +330,7 @@ Route::middleware('admin')->group(function () {
             Route::post('approve', 'approve')->name('approve');
             Route::post('reject', 'reject')->name('reject');
         });
-//car withdraw
+
 
 
 
@@ -290,6 +344,38 @@ Route::middleware('admin')->group(function () {
             Route::post('status/{id}', 'status')->name('status');
         });
     });
+
+    //carwithdraw controller
+
+
+
+    Route::name('carwithdraw.')->prefix('withdrawc')->group(function () {
+
+        Route::controller('CarWithdrawalController')->group(function () {
+            Route::get('pending', 'pending')->name('pending');
+            Route::get('approved', 'approved')->name('approved');
+            Route::get('rejected', 'rejected')->name('rejected');
+            Route::get('log', 'log')->name('log');
+            Route::get('details/{id}', 'details')->name('details');
+            Route::post('approve', 'approve')->name('approve');
+            Route::post('reject', 'reject')->name('reject');
+        });
+
+
+
+
+        // Withdraw Method
+        Route::controller('CarWithdrawMethodController')->prefix('methodc')->name('method.')->group(function () {
+            Route::get('/', 'methods')->name('index');
+            Route::get('create', 'create')->name('create');
+            Route::post('create', 'store')->name('store');
+            Route::get('edit/{id}', 'edit')->name('edit');
+            Route::post('edit/{id}', 'update')->name('update');
+            Route::post('status/{id}', 'status')->name('status');
+        });
+    });
+
+    
 
 
 

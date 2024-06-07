@@ -3,25 +3,25 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Advertisement;
-use App\Models\Owner;
+use App\Models\CarAdvert;
+use App\Models\CarOw;
 use App\Rules\FileTypeValidate;
 use Illuminate\Http\Request;
 
-class AdsController extends Controller
+class CarAdsController extends Controller
 {
     public function all()
     {
         $pageTitle = 'All Advertisements';
-        $ads = Advertisement::latest()->with('owner.hotelSetting')->paginate(getPaginate());
-        $owners = Owner::owner()->with('hotelSetting:id,owner_id,name')->orderBy('firstname')->get();
+        $ads = CarAdvert::latest()->with('owner.hotelSetting')->paginate(getPaginate());
+        $owners = CarOw::owner()->with('hotelSetting:id,owner_id,name')->orderBy('firstname')->get();
         return view('admin.ads', compact('pageTitle', 'ads', 'owners'));
     }
 
     public function add(Request $request, $id = 0)
     {
         $imageValidation = 'required';
-        $ownerIds = Owner::owner()->pluck('id')->toArray();
+        $ownerIds = CarOw::owner()->pluck('id')->toArray();
         if ($id) {
             $imageValidation = 'nullable';
         }
@@ -40,10 +40,10 @@ class AdsController extends Controller
         );
 
         if ($id) {
-            $ads = Advertisement::findOrFail($id);
+            $ads = CarAdvert::findOrFail($id);
             $message = 'Ad updated successfully';
         } else {
-            $ads = new Advertisement();
+            $ads = new CarAdvert();
             $message = 'Ad added successfully';
         }
 
@@ -90,7 +90,7 @@ class AdsController extends Controller
 
     public function delete($id)
     {
-        $ads = Advertisement::findOrFail($id);
+        $ads = CarAdvert::findOrFail($id);
         $path = getFilePath('ads') . '/' . $ads->image;
 
         if (file_exists($path)) {

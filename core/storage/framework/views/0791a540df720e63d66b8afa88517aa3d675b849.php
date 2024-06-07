@@ -59,6 +59,7 @@
                         <span class="menu-title"><?php echo app('translator')->get('Hotel Attributes'); ?> </span>
                     </a>
                     <div class="sidebar-submenu <?php echo e(menuActive('admin.hotel*', 2)); ?>">
+
                         <ul>
                             <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.amenity.all')); ?>">
                                 <a class="nav-link" href="<?php echo e(route('admin.hotel.amenity.all')); ?>">
@@ -85,36 +86,7 @@
                 </li>
                
 
-                <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="<?php echo e(menuActive('admin.hotel*', 3)); ?>" href="javascript:void(0)">
-                        <i class="menu-icon la la-tools"></i>
-                        <span class="menu-title"><?php echo app('translator')->get('Car Attributes'); ?> </span>
-                    </a>
-                    <div class="sidebar-submenu <?php echo e(menuActive('admin.hotel*', 2)); ?>">
-                        <ul>
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.amenity.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.amenity.all')); ?>">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Car1'); ?></span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.facility.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.facility.all')); ?>">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Car2'); ?></span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.bed.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.bed.all')); ?>">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Car3'); ?></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+               
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="<?php echo e(menuActive('admin.users*', 3)); ?>" href="javascript:void(0)">
@@ -369,7 +341,7 @@
                 <li class="sidebar-menu-item <?php echo e(menuActive('admin.dashboard')); ?>">
                     <a class="nav-link" href="<?php echo e(route('admin.dashboard')); ?>">
                         <i class="menu-icon las la-home"></i>
-                        <span class="menu-title"><?php echo app('translator')->get('Cars'); ?></span>
+                        <span class="menu-title"><?php echo app('translator')->get('Cars Dahboard '); ?></span>
                     </a>
                 </li>
 
@@ -407,67 +379,38 @@
                 <li class="sidebar-menu-item <?php echo e(menuActive('admin.carads.all')); ?>">
                     <a class="nav-link" href="<?php echo e(route('admin.carads.all')); ?>">
                         <i class="menu-icon las la-ad"></i>
-                        <span class="menu-title"><?php echo app('translator')->get('Manage Ads'); ?></span>
+                        <span class="menu-title"><?php echo app('translator')->get('Manage Car Ads'); ?></span>
                     </a>
                 </li>
 
-                <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="<?php echo e(menuActive('admin.hotel*', 3)); ?>" href="javascript:void(0)">
-                        <i class="menu-icon la la-tools"></i>
-                        <span class="menu-title"><?php echo app('translator')->get('Hotel Attributes'); ?> </span>
-                    </a>
-                    <div class="sidebar-submenu <?php echo e(menuActive('admin.hotel*', 2)); ?>">
-                        <ul>
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.amenity.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.amenity.all')); ?>">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Amenities'); ?></span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.facility.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.facility.all')); ?>">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Facilities'); ?></span>
-                                </a>
-                            </li>
-
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.bed.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.bed.all')); ?>">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Bed Types'); ?></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+               
                
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="<?php echo e(menuActive('admin.hotel*', 3)); ?>" href="javascript:void(0)">
+                    <a class="<?php echo e(menuActive('admin.car*', 3)); ?>" href="javascript:void(0)">
                         <i class="menu-icon la la-tools"></i>
                         <span class="menu-title"><?php echo app('translator')->get('Car Attributes'); ?> </span>
                     </a>
                     <div class="sidebar-submenu <?php echo e(menuActive('admin.hotel*', 2)); ?>">
                         <ul>
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.amenity.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.amenity.all')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.car.amen.all')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.car.amen.all')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Car1'); ?></span>
+                                    <span class="menu-title"><?php echo app('translator')->get('carA'); ?></span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.facility.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.facility.all')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.car.face.all')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.car.face.all')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Car2'); ?></span>
+                                    <span class="menu-title"><?php echo app('translator')->get('Carb'); ?></span>
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.hotel.bed.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.hotel.bed.all')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.car.beds.all')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.car.beds.all')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title"><?php echo app('translator')->get('Car3'); ?></span>
+                                    <span class="menu-title"><?php echo app('translator')->get('Carc'); ?></span>
                                 </a>
                             </li>
                         </ul>
@@ -475,9 +418,9 @@
                 </li>
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="<?php echo e(menuActive('admin.users*', 3)); ?>" href="javascript:void(0)">
+                    <a class="<?php echo e(menuActive('admin.carusers*', 3)); ?>" href="javascript:void(0)">
                         <i class="menu-icon las la-users"></i>
-                        <span class="menu-title"><?php echo app('translator')->get('Registered Users'); ?></span>
+                        <span class="menu-title"><?php echo app('translator')->get('Registered Car Users'); ?></span>
                         <?php if($bannedUsersCount > 0 || $emailUnverifiedUsersCount > 0 || $mobileUnverifiedUsersCount > 0): ?>
                             <span class="menu-badge pill bg--danger ms-auto">
                                 <i class="fa fa-exclamation"></i>
@@ -485,16 +428,16 @@
                         <?php endif; ?>
                     </a>
 
-                    <div class="sidebar-submenu <?php echo e(menuActive('admin.users*', 2)); ?>">
+                    <div class="sidebar-submenu <?php echo e(menuActive('admin.carusers*', 2)); ?>">
                         <ul>
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.users.active')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.users.active')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carusers.active')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.carusers.active')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title"><?php echo app('translator')->get('Active Users'); ?></span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.users.banned')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.users.banned')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carusers.banned')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.carusers.banned')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title"><?php echo app('translator')->get('Banned Users'); ?></span>
                                     <?php if($bannedUsersCount): ?>
@@ -502,8 +445,8 @@
                                     <?php endif; ?>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.users.email.unverified')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.users.email.unverified')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carusers.email.unverified')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.carusers.email.unverified')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title"><?php echo app('translator')->get('Email Unverified'); ?></span>
 
@@ -512,8 +455,8 @@
                                     <?php endif; ?>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.users.mobile.unverified')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.users.mobile.unverified')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carusers.mobile.unverified')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.carusers.mobile.unverified')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title"><?php echo app('translator')->get('Mobile Unverified'); ?></span>
                                     <?php if($mobileUnverifiedUsersCount): ?>
@@ -522,23 +465,23 @@
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.users.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.users.all')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carusers.all')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.carusers.all')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title"><?php echo app('translator')->get('All Users'); ?></span>
                                 </a>
                             </li>
                             
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.users.deleted')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.users.deleted')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carusers.deleted')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.carusers.deleted')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title"><?php echo app('translator')->get('Deleted Users'); ?></span>
                                 </a>
                             </li>
 
                             <hr class="my-0">
-                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.users.notification.all')); ?>">
-                                <a class="nav-link" href="<?php echo e(route('admin.users.notification.all')); ?>">
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carusers.notification.all')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.carusers.notification.all')); ?>">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title"><?php echo app('translator')->get('Send Notification to All'); ?></span>
                                 </a>
@@ -666,6 +609,62 @@
                         </ul>
                     </div>
                 </li>
+
+                <li class="sidebar-menu-item sidebar-dropdown">
+                    <a class="<?php echo e(menuActive('admin.withdraw*', 3)); ?>" href="javascript:void(0)">
+                        <i class="menu-icon la la-bank"></i>
+                        <span class="menu-title"><?php echo app('translator')->get('Car Withdrawals'); ?> </span>
+                        <?php if(0 < $pendingWithdrawCount): ?>
+                            <span class="menu-badge pill bg--danger ms-auto">
+                                <i class="fa fa-exclamation"></i>
+                            </span>
+                        <?php endif; ?>
+                    </a>
+                    <div class="sidebar-submenu <?php echo e(menuActive('admin.withdraw*', 2)); ?> ">
+                        <ul>
+
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carwithdraw.method.*')); ?>">
+                                <a class="nav-link" href="<?php echo e(route('admin.carwithdraw.method.index')); ?>">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title"><?php echo app('translator')->get(' Car Withdrawal  Methods'); ?></span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carwithdraw.pending')); ?> ">
+                                <a class="nav-link" href="<?php echo e(route('admin.carwithdraw.pending')); ?>">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title"><?php echo app('translator')->get('Pending Withdrawals'); ?></span>
+
+                                    <?php if($pendingWithdrawCount): ?>
+                                        <span class="menu-badge pill bg--danger ms-auto"><?php echo e($pendingWithdrawCount); ?></span>
+                                    <?php endif; ?>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carwithdraw.approved')); ?> ">
+                                <a class="nav-link" href="<?php echo e(route('admin.carwithdraw.approved')); ?>">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title"><?php echo app('translator')->get('Approved Withdrawals'); ?></span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carwithdraw.rejected')); ?> ">
+                                <a class="nav-link" href="<?php echo e(route('admin.carwithdraw.rejected')); ?>">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title"><?php echo app('translator')->get('Rejected Withdrawals'); ?></span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-menu-item <?php echo e(menuActive('admin.carwithdraw.log')); ?> ">
+                                <a class="nav-link" href="<?php echo e(route('admin.carwithdraw.log')); ?>">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title"><?php echo app('translator')->get('All Withdrawals'); ?></span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
 
               
                 <!-- 7777777777777 -->

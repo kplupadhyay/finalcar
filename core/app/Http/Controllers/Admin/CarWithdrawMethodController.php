@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Lib\FormProcessor;
-use App\Models\CarWithdrawMethod;
+use App\Models\CarWithdrawlMethod;
 use Illuminate\Http\Request;
 
 class CarWithdrawMethodController extends Controller
@@ -12,7 +12,7 @@ class CarWithdrawMethodController extends Controller
     public function methods()
     {
         $pageTitle = 'Withdrawal Methods';
-        $methods = CarWithdrawMethod::orderBy('name')->orderBy('id')->get();
+        $methods = CarWithdrawlMethod::orderBy('name')->orderBy('id')->get();
         return view('admin.withdraw.index', compact('pageTitle', 'methods'));
     }
 
@@ -43,7 +43,7 @@ class CarWithdrawMethodController extends Controller
 
         $generate = $formProcessor->generate('withdraw_method');
 
-        $method = new CarWithdrawMethod();
+        $method = new CarWithdrawlMethod();
         $method->name = $request->name;
         $method->form_id = @$generate->id ?? 0;
         $method->rate = $request->rate;
@@ -64,7 +64,7 @@ class CarWithdrawMethodController extends Controller
     public function edit($id)
     {
         $pageTitle = 'Update Withdrawal Method';
-        $method = CarWithdrawMethod::with('form')->findOrFail($id);
+        $method = CarWithdrawlMethod::with('form')->findOrFail($id);
         $form = $method->form;
         return view('admin.withdraw.edit', compact('pageTitle', 'method','form'));
     }
@@ -86,7 +86,7 @@ class CarWithdrawMethodController extends Controller
         $validation = array_merge($validation,$generatorValidation['rules']);
         $request->validate($validation,$generatorValidation['messages']);
 
-        $method = CarWithdrawMethod::findOrFail($id);
+        $method = CarWithdrawlMethod::findOrFail($id);
 
         $generate = $formProcessor->generate('withdraw_method',true,'id',$method->form_id);
         $method->form_id        = @$generate->id ?? 0;
@@ -108,7 +108,7 @@ class CarWithdrawMethodController extends Controller
 
     public function status($id)
     {
-        return CarWithdrawMethod::changeStatus($id);
+        return CarWithdrawlMethod::changeStatus($id);
     }
 
 }

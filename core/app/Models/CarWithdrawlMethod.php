@@ -16,7 +16,7 @@ namespace App\Models;
 use App\Traits\GlobalStatus;
 use Illuminate\Database\Eloquent\Model;
 
-class CarWithdrawMethod extends Model
+class CarWithdrawlMethod extends Model
 {
     use GlobalStatus;
 

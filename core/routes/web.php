@@ -29,6 +29,13 @@ Route::controller('OwnerRequestController')->name('vendor.')->group(function () 
     Route::post('send-form-data/{id}', 'storeFormData')->name('send.form.data');
 });
 
+Route::controller('CarOwnerRequestController')->name('carvendor.')->group(function () {
+    Route::get('register-your-car', 'ownerRequest')->name('request');
+    Route::post('check', 'checkOwner')->name('check.user');
+    Route::post('send-request', 'sendRequest')->name('request.send');
+    Route::post('send-form-data/{id}', 'storeFormData')->name('send.form.data');
+});
+
 Route::controller('SiteController')->group(function () {
     Route::post('/add/device/token', 'getDeviceToken')->name('add.device.token');
     Route::get('/change/{lang?}', 'changeLanguage')->name('lang');
