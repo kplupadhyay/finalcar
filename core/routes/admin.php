@@ -110,7 +110,7 @@ Route::middleware('admin')->group(function () {
     });
 
     //manage car vendor request
-    Route::controller('VendorRequestController')->prefix('carvendor')->name('carvendor.')->group(function () {
+Route::controller('CarVendorRequestController')->prefix('carvendor')->name('carvendor.')->group(function () {
         Route::get('request', 'vendorRequests')->name('request');
         Route::get('vendor-request/detail/{id}', 'requestDetail')->name('request.detail');
         Route::post('request/reject/{id}', 'rejectRequest')->name('request.reject');

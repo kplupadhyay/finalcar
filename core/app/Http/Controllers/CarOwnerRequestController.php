@@ -125,32 +125,82 @@ class CarOwnerRequestController extends Controller
         return back();
     }
 
+    // public function storeFormData(Request $request, $id)
+    // {
+    //     $owner = CarOw::where('status', 5)->findOrFail($id);
+    //     $form  = CarForm::where('act', 'owner_form')->first();
+
+    //     $formData           = $form->form_data;
+    //     $formProcessor      = new FormProcessor();
+    //     $formValidationRule = $formProcessor->valueValidation($formData);
+
+    //     $request->validate($formValidationRule);
+    //     $ownerData = $formProcessor->processFormData($request, $formData);
+
+    //     $owner->form_data = $ownerData;
+    //     $owner->req_step  = 2;
+    //     $owner->status    = 2;
+    //     $owner->save();
+
+    //     session()->put('STEP', 2);
+
+    //     $adminNotification            = new AdminNotification();
+    //     $adminNotification->owner_id  = $owner->id;
+    //     $adminNotification->title     = 'One person requested to be an owner';
+    //     $adminNotification->click_url = urlPath('admin.owners.detail', $owner->id);
+    //     $adminNotification->save();
+
+    //     $notify[] = ['success', 'Your hotel registration request send successfully'];
+    //     return back()->withNotify($notify);
+    // }
+
     public function storeFormData(Request $request, $id)
-    {
-        $owner = CarOw::where('status', 5)->findOrFail($id);
-        $form  = CarForm::where('act', 'owner_form')->first();
+{
+    // Fetch the CarOw model by ID where status is 5
+    $owner = CarOw::where('status', 5)->findOrFail($id);
 
-        $formData           = $form->form_data;
-        $formProcessor      = new FormProcessor();
-        $formValidationRule = $formProcessor->valueValidation($formData);
+    // Fetch the CarForm model where act is 'owner_form'
+    $form = CarForm::where('act', 'carowner_form')->first();
 
-        $request->validate($formValidationRule);
-        $ownerData = $formProcessor->processFormData($request, $formData);
+    
 
-        $owner->form_data = $ownerData;
-        $owner->req_step  = 2;
-        $owner->status    = 2;
-        $owner->save();
-
-        session()->put('STEP', 2);
-
-        $adminNotification            = new AdminNotification();
-        $adminNotification->owner_id  = $owner->id;
-        $adminNotification->title     = 'One person requested to be an owner';
-        $adminNotification->click_url = urlPath('admin.owners.detail', $owner->id);
-        $adminNotification->save();
-
-        $notify[] = ['success', 'Your hotel registration request send successfully'];
-        return back()->withNotify($notify);
+    // Check if the form was found
+    if (!$form) {
+        return back()->withErrors(['error' => 'Form with act "owner_form" not found.']);
     }
+
+    // Access the form data
+    $formData = $form->form_data;
+
+    // Process form data
+    $formProcessor = new FormProcessor();
+    $formValidationRule = $formProcessor->valueValidation($formData);
+
+    // Validate the request based on the form validation rules
+    $request->validate($formValidationRule);
+
+    // Process the form data
+    $ownerData = $formProcessor->processFormData($request, $formData);
+
+    // Update the owner model
+    $owner->form_data = $ownerData;
+    $owner->req_step  = 2;
+    $owner->status    = 2;
+    $owner->save();
+
+    // Store the step in session
+    session()->put('STEP', 2);
+
+    // Create and save an admin notification
+    $adminNotification = new AdminNotification();
+    $adminNotification->owner_id = $owner->id;
+    $adminNotification->title = 'One person requested to be an owner';
+    $adminNotification->click_url = urlPath('admin.owners.detail', $owner->id);
+    $adminNotification->save();
+
+    // Notify the user
+    $notify[] = ['success', 'Your hotel registration request sent successfully'];
+    return back()->withNotify($notify);
+}
+
 }

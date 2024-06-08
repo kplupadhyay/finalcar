@@ -44,7 +44,7 @@ class CarOw extends Authenticatable
     {
         return $this->hasMany(OwnerLogin::class);
     }
-
+     
     public function transactions()
     {
         return $this->hasMany(CarTransaction::class)->orderBy('id', 'desc');
@@ -52,12 +52,12 @@ class CarOw extends Authenticatable
 
     public function deposits()
     {
-        return $this->hasMany(Deposit::class)->where('status', '!=', Status::PAYMENT_INITIATE);
+        return $this->hasMany(CarDeposit::class)->where('status', '!=', Status::PAYMENT_INITIATE);
     }
 
     public function withdrawals()
     {
-        return $this->hasMany(Withdrawal::class)->where('status', '!=', Status::PAYMENT_INITIATE);
+        return $this->hasMany(CarWithdrawal::class)->where('status', '!=', Status::PAYMENT_INITIATE);
     }
 
     public function tickets()

@@ -14,8 +14,8 @@
 </header>
 
 
-
-<!-- <header class="site-header {{ request()->routeIs('home') ? '' : 'header-two' }}" id="fixed-header">
+<!-- 
+<header class="site-header {{ request()->routeIs('home') ? '' : 'header-two' }}" id="fixed-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between">
             <a class="navbar-brand logo" href="{{ route('home') }}"><img src="{{ siteLogo() }}" alt=""></a>

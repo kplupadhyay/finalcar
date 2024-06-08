@@ -30,19 +30,19 @@ class CarSetting extends Model
     protected $appends = ['image_url'];
 
     public function owner(){
-        return $this->belongsTo(Owner::class);
+        return $this->belongsTo(CarOw::class ,"owner_id");
     }
 
     public function country(){
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(CarCountry::class);
     }
 
     public function city(){
-        return $this->belongsTo(City::class);
+        return $this->belongsTo(CarCity::class);
     }
 
     public function location(){
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(CarLocation::class);
     }
 
     public function imageUrl(): Attribute

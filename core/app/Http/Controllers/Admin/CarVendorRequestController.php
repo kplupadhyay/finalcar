@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Hash;
 class CarVendorRequestController extends Controller
 {
 
+    // public function vendorRequests()
+
+    // {
+    //     $pageTitle = 'Vendor Requests';
+    //     $owners = CarOw::owner()->ownerRequest()->searchable(['firstname', 'lastname', 'email', 'mobile'])->with('hotelSetting', 'hotelSetting.location', 'hotelSetting.city', 'hotelSetting.country')->paginate(getPaginate());
+    //     return view('admin.carvendor_request.list', compact('pageTitle', 'owners'));
+    // }
+
     public function vendorRequests()
     {
         $pageTitle = 'Vendor Requests';
@@ -52,7 +60,7 @@ class CarVendorRequestController extends Controller
         notify($owner, 'OWNER_REQUEST_APPROVED', [
             'email'  => $owner->email,
             'password' => $password,
-            'login_url' => route('owner.login')
+            'login_url' => route('carowner.login')
         ]);
 
         $notify[] = ['success', 'Request approved successfully'];
